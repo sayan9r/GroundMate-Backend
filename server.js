@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5174",
+    origin: process.env.CLIENT_URL ,
     credentials: true,
 }));
 
@@ -24,4 +24,5 @@ app.use("/api/auth",authRoutes);
 const PORT = process.env.PORT || 3000
 app.listen(PORT,()=> {
     console.log(`server is running on port ${PORT}`);
+   // console.log("CLIENT_URL is:", process.env.CLIENT_URL);
 });

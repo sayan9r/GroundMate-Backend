@@ -8,6 +8,11 @@ import { protect } from '../middleware/auth.js';
 
 const router = express.Router();
 
+// Health/status route to confirm server is running
+router.get('/status', (req, res) => {
+  res.json({ status: 'ok', message: 'Server started' });
+});
+
 const cookieOptions = {
     httpOnly : true ,
     // secure : process.env.NODE_ENV == "production" ,
